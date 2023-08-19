@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container BT1">
+      <h3>BT1</h3>
+
+      <div class="form-group">
+        <label for="">Điểm chuẩn</label>
+        <input
+          type="text"
+          name=""
+          id="benchmark"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Môn 1</label>
+        <input
+          type="text"
+          name=""
+          id="subject1"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Môn 2</label>
+        <input
+          type="text"
+          name=""
+          id="subject2"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Môn 3</label>
+        <input
+          type="text"
+          name=""
+          id="subject3"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Chọn khu vực</label>
+        <select class="form-control" name="" id="area">
+          <option value="2">khu vực A</option>
+          <option value="1">Khu vực B</option>
+          <option value="0.5">Khu vực C</option>
+          <option value="x">Khu vực không ưu tiên</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Chọn đối tượng</label>
+        <select class="form-control" name="" id="object">
+          <option value="2.5">Đối tượng 1</option>
+          <option value="1.5">Đối tượng 2</option>
+          <option value="1">Đối tượng 3</option>
+          <option value="0">Đối tượng không ưu tiên</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success" id="handleMark">Kết quả</button>
+      <div id="result"></div>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="container BT2">
+      <h3>BT2</h3>
+      <div class="form-group">
+        <label for="">Nhập Tên</label>
+        <input
+          type="text"
+          name=""
+          id="nameCus"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Nhập số điện tiêu thụ (kw)</label>
+        <input
+          type="text"
+          name=""
+          id="eleUse"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+
+      <button class="btn btn-success" id="handlePay">Tính tiền điện</button>
+      <div id="resultPay"></div>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="container BT3">
+      <h3>BT3</h3>
+      <div class="form-group">
+        <label for="">Nhập Tên</label>
+        <input
+          type="text"
+          name=""
+          id="name3"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Tổng thu nhập năm</label>
+        <input
+          type="text"
+          name=""
+          id="yearSalary"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Số người phụ thuộc</label>
+        <input
+          type="text"
+          name=""
+          id="person3"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+
+      <button class="btn btn-success" id="handleTax">
+        Tính thuế thu nhập cá nhân
+      </button>
+      <div id="resultTax"></div>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="container">
+      <h3>BT4</h3>
+      <div class="form-group">
+        <label for="">Mã khách hàng</label>
+        <input
+          type="text"
+          name=""
+          id="cusCode"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Loại khách hàng</label>
+        <select class="form-control" name="" id="cusType" onchange="showHide()">
+          <option selected disabled>Loại khách hàng</option>
+          <option value="0">Nhà dân</option>
+          <option value="1">Doanh nghiệp</option>
+        </select>
+      </div>
+      <div class="form-group" id="connect" style="display: none;">
+        <label for="">Số kết nối</label>
+        <input
+          type="text none"
+          name=""
+          id="numConnect"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Số kênh cao cấp</label>
+        <input
+          type="text"
+          name=""
+          id="vipChannel"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+
+      <button class="btn btn-success" id="handleBill4">Tính hóa đơn</button>
+      <div id="resultBill4"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
