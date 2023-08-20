@@ -99,40 +99,42 @@ function handleTax() {
   var name3 = document.querySelector("#name3").value;
   var yearSalary = +document.querySelector("#yearSalary").value;
   var person3 = +document.querySelector("#person3").value;
-  var taxSalary = yearSalary - 4 - person3 * 1.6;
+  var taxSalary = yearSalary - 4000000 - person3 * 1600000;
   var tax;
+  var x = 1000;
+  x = x.toLocaleString("it-IT", { style: "currency", currency: "VND" });
   if (taxSalary > 0) {
-    if (taxSalary <= 60) {
+    if (taxSalary <= 60e+6) {
       tax = taxSalary * 0.05;
-    } else if (taxSalary <= 120) {
-      tax = 60 * 0.05 + (taxSalary - 60) * 0.1;
+    } else if (taxSalary <= 120e+6) {
+      tax = 60e+6 * 0.05 + (taxSalary - (60e+6)) * 0.1;
     } else if (taxSalary <= 210) {
-      tax = 60 * 0.05 + 60 * 0.1 + (taxSalary - 120) * 0.15;
-    } else if (taxSalary <= 384) {
-      tax = 60 * 0.05 + 60 * 0.1 + 90 * 0.15 + (taxSalary - 210) * 0.2;
+      tax = 60e+6 * 0.05 + 60e+6 * 0.1 + (taxSalary - 120e+6) * 0.15;
+    } else if (taxSalary <= 384e+6) {
+      tax = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + (taxSalary - 210e+6) * 0.2;
     } else if (taxSalary <= 624) {
       tax =
-        60 * 0.05 + 60 * 0.1 + 90 * 0.15 + 174 * 0.2 + (taxSalary - 384) * 0.25;
-    } else if (taxSalary <= 960) {
+      60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6 * 0.2 + (taxSalary - 384e+6) * 0.25;
+    } else if (taxSalary <= 960e+6) {
       tax =
-        60 * 0.05 +
-        60 * 0.1 +
-        90 * 0.15 +
-        174 * 0.2 +
-        240 * 0.25 +
-        (taxSalary - 624) * 0.3;
+        60e+6 * 0.05 +
+        60e+6 * 0.1 +
+        90e+6 * 0.15 +
+        174e+6 * 0.2 +
+        240e+6 * 0.25 +
+        (taxSalary - 624e+6) * 0.3;
     } else {
       tax =
-        60 * 0.05 +
-        60 * 0.1 +
-        90 * 0.15 +
-        174 * 0.2 +
-        240 * 0.25 +
-        336 * 0.3 +
-        (taxSalary - 960) * 0.35;
+        60e+6 * 0.05 +
+        60e+6 * 0.1 +
+        90e+6 * 0.15 +
+        174e+6 * 0.2 +
+        240e+6 * 0.25 +
+        336e+6 * 0.3 +
+        (taxSalary - 960e+6) * 0.35;
     }
     document.querySelector("#resultTax").innerHTML = `
-    <p>Tổng thuế thu nhập cá nhân: ${roundToThree(tax)} triệu</p>`;
+    <p>Tổng thuế thu nhập cá nhân: ${tax.toLocaleString("it-IT", { style: "currency", currency: "VND" })}</p>`;
   } else {
     document.querySelector("#resultTax").innerHTML = `
     <p>Bạn không cần đóng thuế</p>`;
