@@ -108,11 +108,11 @@ function handleTax() {
       tax = taxSalary * 0.05;
     } else if (taxSalary <= 120e+6) {
       tax = 60e+6 * 0.05 + (taxSalary - (60e+6)) * 0.1;
-    } else if (taxSalary <= 210) {
+    } else if (taxSalary <= 210e+6) {
       tax = 60e+6 * 0.05 + 60e+6 * 0.1 + (taxSalary - 120e+6) * 0.15;
     } else if (taxSalary <= 384e+6) {
       tax = 60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + (taxSalary - 210e+6) * 0.2;
-    } else if (taxSalary <= 624) {
+    } else if (taxSalary <= 624e+6) {
       tax =
       60e+6 * 0.05 + 60e+6 * 0.1 + 90e+6 * 0.15 + 174e+6 * 0.2 + (taxSalary - 384e+6) * 0.25;
     } else if (taxSalary <= 960e+6) {
